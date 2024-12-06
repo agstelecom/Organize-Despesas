@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organize Despesas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Organize Despesas</h1>
+
+        <form id="debt-form">
+            <h2>Cadastro de Dívidas</h2>
+            <label for="name">Nome do Credor:</label>
+            <input type="text" id="name" required>
+
+            <label for="pix">Chave PIX:</label>
+            <input type="text" id="pix" required>
+
+            <label for="value">Valor da Dívida:</label>
+            <input type="number" id="value" required>
+
+            <label for="installments">Parcelas (1 para pagamento único):</label>
+            <input type="number" id="installments" min="1" required>
+
+            <button type="submit">Adicionar Dívida</button>
+        </form>
+
+        <div id="debt-list">
+            <h2>Lista de Dívidas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>PIX</th>
+                        <th>Valor</th>
+                        <th>Parcelas</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody id="debts"></tbody>
+            </table>
+            <h3>Total: R$ <span id="total">0.00</span></h3>
+            <button id="export-csv">Exportar CSV</button>
+            <button id="export-pdf">Exportar PDF</button>
+            <input type="file" id="import-csv" accept=".csv">
+        </div>
+      OBS: Aperte (F5) para Zerar Planilha.
+
+        <footer>
+            <p>Organize Despesas desenvolvido por Vinícius Campos</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
